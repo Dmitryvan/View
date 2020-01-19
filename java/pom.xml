@@ -9,9 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <driver.version>3.0.1</driver.version>
+        <driver.version>3.1.0</driver.version>
         <selenium.properties>selenium.properties</selenium.properties>
         <selenium.baseUrl></selenium.baseUrl>
+        <selenium.authUrl></selenium.authUrl>
         <selenium.browser></selenium.browser>
     </properties>
 
@@ -35,6 +36,7 @@
                     <skip>false</skip>
                     <systemPropertyVariables>
                         <selenium.baseUrl>${selenium.baseUrl}</selenium.baseUrl>
+                        <selenium.authUrl>${selenium.authUrl}</selenium.authUrl>
                         <selenium.browser>${selenium.browser}</selenium.browser>
                         <selenium.properties>${selenium.properties}</selenium.properties>
                     </systemPropertyVariables>
@@ -44,8 +46,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -66,17 +68,17 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>${driver.version}</version>
+            <version>3.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-ie-driver</artifactId>
-            <version>${driver.version}</version>
+            <version>3.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>${driver.version}</version>
+            <version>3.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.uncommons</groupId>
@@ -114,6 +116,17 @@
             <groupId>org.easytesting</groupId>
             <artifactId>fest-assert</artifactId>
             <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 

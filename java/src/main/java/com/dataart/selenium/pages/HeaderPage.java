@@ -2,7 +2,6 @@ package com.dataart.selenium.pages;
 
 import com.dataart.selenium.models.User;
 import org.openqa.selenium.By;
-
 import static org.fest.assertions.Assertions.assertThat;
 
 public class HeaderPage extends BasicPage {
@@ -13,5 +12,9 @@ public class HeaderPage extends BasicPage {
 
     public void assertHeader(User user){
         assertThat(getWelcomeMessage()).isEqualTo("Welcome " + user.getFname() + " " + user.getLname());
+    }
+
+    public void assertHeaderViaDataProvider(String fname, String lname) {
+        assertThat(getWelcomeMessage()).isEqualTo("Welcome " + fname + " " + lname);
     }
 }

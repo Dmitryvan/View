@@ -7,12 +7,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(id = USER_NAME_TEXT_FIELD_ID)
+    @FindBy(css = USER_NAME_TEXT_FIELD_CSS)
     WebElement userNameTextField;
-    @FindBy(id = USER_PASSWORD_TEXT_FIELD_ID)
+    @FindBy(css = USER_PASSWORD_TEXT_FIELD_CSS)
     WebElement passwordTextField;
     @FindBy(xpath = LOGIN_BUTTON_XPATH)
     WebElement loginButton;
+    @FindBy(css = "div > a")
+    WebElement registerNewUser;
 
     public HomePage loginAs(User user) {
         userNameTextField.clear();
@@ -23,7 +25,12 @@ public class LoginPage extends BasePage {
         return initPage(HomePage.class);
     }
 
-    public static final String USER_NAME_TEXT_FIELD_ID = "j_username";
-    public static final String USER_PASSWORD_TEXT_FIELD_ID = "j_password";
+    public RegisterPage clickRegNewUserBtn(){
+        registerNewUser.click();
+        return initPage(RegisterPage.class);
+    }
+
+    public static final String USER_NAME_TEXT_FIELD_CSS = "#j_username";
+    public static final String USER_PASSWORD_TEXT_FIELD_CSS = "#j_password";
     public static final String LOGIN_BUTTON_XPATH = "//input[@value='Login']";
 }

@@ -7,7 +7,6 @@ import com.dataart.selenium.pages.HeaderPage;
 import com.dataart.selenium.pages.LoginPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static com.dataart.selenium.framework.Utils.isElementPresent;
 import static com.dataart.selenium.models.UserBuilder.admin;
 import static org.fest.assertions.Assertions.assertThat;
@@ -29,7 +28,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void correctLoginTest() {
+    public void correctLoginTest(){
         loginPage.loginAs(user);
         headerPage.assertHeader(user);
     }

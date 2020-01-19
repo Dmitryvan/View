@@ -4,17 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import java.io.*;
 import java.util.Properties;
 
 public class Settings {
 
     private static final String SELENIUM_BASEURL = "selenium.baseUrl";
+    private static final String SELENIUM_AUTH = "selenium.authUrl";
     private static final String SELENIUM_BROWSER = "selenium.browser";
     private static final String SELENIUM_PROPERTIES = "selenium.properties";
 
     private String baseUrl;
+    private String authUrl;
     private BrowserType browser;
     private Properties properties = new Properties();
 
@@ -25,6 +26,7 @@ public class Settings {
     private void loadSettings() {
         properties = loadPropertiesFile();
         baseUrl = getPropertyOrThrowException(SELENIUM_BASEURL);
+        authUrl = getPropertyOrThrowException(SELENIUM_AUTH);
         browser = BrowserType.Browser(getPropertyOrThrowException(SELENIUM_BROWSER));
     }
 
@@ -58,6 +60,13 @@ public class Settings {
         return getProperty(name, true);
     }
 
+    public String getUrl(boolean url){
+        if (url){
+            return getAuthUrl();
+        }
+        return getBaseUrl();
+    }
+
     private String getProperty(String name, boolean forceExceptionIfNotDefined) {
         String result;
         if ((result = System.getProperty(name, null)) != null && result.length() > 0) {
@@ -83,14 +92,16 @@ public class Settings {
         return getDriver(browser);
     }
 
-    private WebDriver getDriver(BrowserType browserType) {
+    WebDriver getDriver(BrowserType browserType) {
         switch (browserType) {
             case GC:
                 System.setProperty("webdriver.chrome.driver", ".//target//test-classes//chromedriver.exe");
                 return new ChromeDriver();
             case FIREFOX:
+                System.setProperty("webdriver.gecko.driver", ".//target//test-classes//geckodriver.exe");
                 return new FirefoxDriver();
             case IE:
+                System.setProperty("webdriver.ie.driver", ".//target//test-classes//IEDriverServer.exe");
                 return new InternetExplorerDriver();
             default:
                 throw new UnknownBrowserException("Cannot create driver for unknown browser type");
@@ -99,6 +110,10 @@ public class Settings {
 
     public String getBaseUrl() {
         return baseUrl;
+    }
+
+    public String getAuthUrl() {
+        return authUrl;
     }
 
     public BrowserType getBrowser() {
