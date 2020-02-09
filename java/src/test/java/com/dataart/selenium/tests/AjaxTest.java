@@ -14,10 +14,7 @@ public class AjaxTest extends BaseTest {
     private AjaxPage ajaxPage;
     private LoginPage loginPage;
     private BasicPage basicPage;
-    private HeaderPage headerPage;
     private HomePage homePage;
-    private AppPage appPage;
-    private MyAppPage myAppPage;
     private User user;
 
     @BeforeMethod(alwaysRun = true)
@@ -25,10 +22,7 @@ public class AjaxTest extends BaseTest {
         ajaxPage = initPage(AjaxPage.class);
         basicPage = initPage(BasicPage.class);
         loginPage = basicPage.forceLogout();
-        headerPage = initPage(HeaderPage.class);
         homePage = initPage(HomePage.class);
-        appPage = initPage(AppPage.class);
-        myAppPage = initPage(MyAppPage.class);
         user = admin();
     }
 

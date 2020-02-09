@@ -1,6 +1,7 @@
 package com.dataart.selenium.pages;
 
 import com.dataart.selenium.framework.Utils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,9 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.Set;
 
 public class HomePage extends BasicPage {
-    public HeaderPage getHeader() {
-        return initPage(HeaderPage.class);
-    }
 
     @FindBy(xpath = "//a[.='Home']")
     WebElement homeBtn;
@@ -22,12 +20,15 @@ public class HomePage extends BasicPage {
     WebElement appIcon;
     @FindBy (xpath = "//a[.='My applications']")
     WebElement myAppsBtn;
-    @FindBy (css = "a[href*=\"/app?title=Boroda\"]")
-    public WebElement newAppInList;
+
+    public String newAppInList = "a[href*=\"/app?title=%s\"]";
+    private String newAppSelectorFormat = String.format(newAppInList, MyAppPage.message1);
+
     @FindBy(css = "a[href*=\"/app?title=Cat App\"]")
     WebElement newAppImageInList;
-    @FindBy (css = ".popular-app [alt='Boroda App']")
-    public WebElement popularApp;
+
+    public static String popularApp = ".popular-app [alt='%s']";
+    public static String popularAppSelector = String.format(popularApp, MyAppPage.message1);
 
     public static void openNewTabBrowser() {
         ((JavascriptExecutor)driver).executeScript("window.open('about:blank', '_blank');");
@@ -68,12 +69,12 @@ public class HomePage extends BasicPage {
     }
 
     public HomePage openNewApp() {
-        Utils.waitForElementPresent(newAppInList);
+        WebElement newAppSelector = driver.findElement(By.cssSelector(newAppSelectorFormat));
+        Utils.waitForElementPresent(newAppSelector);
         Actions actions = new Actions(driver);
-        actions.moveToElement(newAppInList).build().perform();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", newAppInList);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", newAppInList);
-//        newAppInList.click();
+        actions.moveToElement(newAppSelector).build().perform();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", newAppSelector);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", newAppSelector);
         return initPage(HomePage.class);
     }
 
@@ -82,12 +83,11 @@ public class HomePage extends BasicPage {
         Actions actions = new Actions(driver);
         actions.moveToElement(newAppImageInList).build().perform();
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", newAppImageInList);
-//        newAppImageInList.click();
         return initPage(HomePage.class);
     }
 
     public HomePage clickPopApp(){
-        popularApp.click();
+        driver.findElement(By.cssSelector(popularAppSelector)).click();
         return initPage(HomePage.class);
     }
 
@@ -99,7 +99,6 @@ public class HomePage extends BasicPage {
 
     public HomePage clickJsTestBtn(){
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", jsTestBtn);
-//        jsTestBtn.click();
         return initPage(HomePage.class);
     }
 }

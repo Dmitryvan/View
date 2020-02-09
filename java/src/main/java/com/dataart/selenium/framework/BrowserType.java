@@ -15,9 +15,10 @@ public enum BrowserType {
         browsersMap.put("firefox", BrowserType.FIREFOX);
         browsersMap.put("ie", BrowserType.IE);
         browsersMap.put("gc", BrowserType.GC);
+        browsersMap.put("Chrome", BrowserType.GC);
     }
 
-    public static BrowserType Browser(String name) {
+    public static BrowserType convertToBrowserType(String name) {
         BrowserType browserType = browsersMap.get(name.toLowerCase().trim());
         if (browserType == null) {
             throw new UnknownBrowserException("Unknown browser [" + name + "]. Use one of following: "

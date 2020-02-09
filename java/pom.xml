@@ -11,9 +11,8 @@
     <properties>
         <driver.version>3.1.0</driver.version>
         <selenium.properties>selenium.properties</selenium.properties>
-        <selenium.baseUrl></selenium.baseUrl>
-        <selenium.authUrl></selenium.authUrl>
-        <selenium.browser></selenium.browser>
+        <selenium.baseAuthUrl>false</selenium.baseAuthUrl>
+        <selenium.browser>gc</selenium.browser>
     </properties>
 
     <build>
@@ -35,8 +34,7 @@
                     </properties>
                     <skip>false</skip>
                     <systemPropertyVariables>
-                        <selenium.baseUrl>${selenium.baseUrl}</selenium.baseUrl>
-                        <selenium.authUrl>${selenium.authUrl}</selenium.authUrl>
+                        <selenium.baseAuthUrl>${selenium.baseAuthUrl}</selenium.baseAuthUrl>
                         <selenium.browser>${selenium.browser}</selenium.browser>
                         <selenium.properties>${selenium.properties}</selenium.properties>
                     </systemPropertyVariables>
@@ -46,8 +44,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,6 +1,8 @@
 package com.dataart.selenium.tests;
 
 import com.dataart.selenium.framework.BaseTest;
+import com.dataart.selenium.models.AppBuilder;
+import com.dataart.selenium.models.Application;
 import com.dataart.selenium.models.User;
 import com.dataart.selenium.pages.*;
 import org.testng.annotations.BeforeMethod;
@@ -50,7 +52,8 @@ public class AppTest extends BaseTest {
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
-        myAppPage.createNewApp(myAppPage.noimage, myAppPage.message1);
+        Application application = AppBuilder.withoutImages();
+        myAppPage.createNewApp(application);
         homePage.openNewApp();  // Verify that it is displayed correctly and can be downloaded.
         ArrayList myAttribute = appPage.getAppInfo();
         AppPage.clickDownload();
@@ -74,7 +77,8 @@ public class AppTest extends BaseTest {
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
-        myAppPage.createNewApp(myAppPage.image, myAppPage.message4);
+        Application application = AppBuilder.withImage();
+        myAppPage.createNewApp(application);
         homePage.clickHomeBtn();
         homePage.openNewAppImage(); // Verify app creation
         basicPage.forceLogout();
@@ -85,8 +89,12 @@ public class AppTest extends BaseTest {
 //    to the details page of this application.
     public void downloadApp() {
         loginPage.loginAs(user);
+        homePage.clickMyAppsBtn();
+        myAppPage.clickAddNewAppBtn();
+        Application application = AppBuilder.withoutImages();
+        myAppPage.createNewApp(application);
         homePage.openNewApp();
-        myAppPage.openFiveTimesAppPopular();
+        myAppPage.downloadToAppPopularState();
         homePage.clickHomeBtn();
         homePage.clickPopApp();
         appPage.assertDownloadApp(); // Verify that it has appeared in the most popular apps section...
@@ -98,7 +106,8 @@ public class AppTest extends BaseTest {
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
-        myAppPage.createNewApp(myAppPage.noimage, myAppPage.message1);
+        Application application = AppBuilder.withoutImages();
+        myAppPage.createNewApp(application);
         homePage.openNewApp();
         myAppPage.deleteNewAppWithoutImages();
         assertThat(basicPage.getFlashMessage()).isEqualTo("Deleted");

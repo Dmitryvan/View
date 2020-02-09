@@ -1,22 +1,39 @@
 package com.dataart.selenium.pages;
 
 import com.dataart.selenium.framework.Utils;
-import org.openqa.selenium.Alert;
+import com.dataart.selenium.models.Application;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
+import java.util.NoSuchElementException;
+import java.util.Random;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class MyAppPage extends BasicPage {
 
-    public String message1 = "Boroda App";
-    public String message2 = "blablabla";
+        static String generateRandomWord(int wordLength) {
+        Random r = new Random();
+        StringBuilder sb = new StringBuilder(wordLength);
+        for(int i = 0; i < wordLength; i++) {
+            int tmp = 'a' + r.nextInt('z' - 'a');
+            sb.append(tmp);
+        }
+        return sb.toString();
+    }
+
+    public static String message1 = "-^-App-^-" + generateRandomWord(2);
+    public static String message2 = "blablabla";
     public String message3 = "Opps, has been changed";
-    public String message4 = "Cat App";
-    public String image = "image";
-    public String noimage = "noimage";
+    public static String message4 = "Cat App";
+    public static String image = "image";
+    public static String noimage = "noimage";
 
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
@@ -50,21 +67,19 @@ public class MyAppPage extends BasicPage {
         return initPage(MyAppPage.class);
     }
 
-    private void checkCategory(){
+    public void checkCategory(){
         category.click();
         Utils.waitForElementPresent(informationCategory);
         wait.until(ExpectedConditions.elementToBeClickable(informationCategory));
         informationCategory.click();
     }
 
-    public MyAppPage addImageApp(String a) {
+    public MyAppPage addImageApp(Application a) {
         if (a.equals(image)) {
-//            chooseFileImage.sendKeys("C:\\Users\\dvanin\\Downloads\\Git\\dvanin-aut06\\java\\src\\test\\resources\\Pic\\appimage.jpeg");
             File appimage = new File("appimage.jpeg");
             chooseFileImage.sendKeys(appimage.getAbsolutePath());
-//            chooseFileIcon.sendKeys("C:\\Users\\dvanin\\Downloads\\Git\\dvanin-aut06\\java\\src\\test\\resources\\Pic\\iconapp.jpeg");
             File iconapp = new File("iconapp.jpeg");
-            chooseFileImage.sendKeys(iconapp.getAbsolutePath());
+            chooseFileIcon.sendKeys(iconapp.getAbsolutePath());
         }
         else {
             a.equals(noimage);
@@ -74,27 +89,27 @@ public class MyAppPage extends BasicPage {
 
     public MyAppPage textOfTitle(String b){
         if (b.equals(message1)){
-            titleTextField.sendKeys("Boroda App");
+            titleTextField.sendKeys(message1);
         }
         if (b.equals(message4)) {
-            titleTextField.sendKeys("Cat App");
+            titleTextField.sendKeys(message4);
         }
         return initPage(MyAppPage.class);
     }
 
-    public MyAppPage createNewApp(String a, String b){
+    public void createNewApp(Application app) {
         Utils.waitForElementPresent(titleTextField);
-        textOfTitle(b);
+        textOfTitle(app.getTitle());
         descriptionTextField.sendKeys("blablabla");
         checkCategory();
-        addImageApp(a);
+        addImageApp(app);
         clickCreateBtn();
-        return initPage(MyAppPage.class);
     }
 
-    private void clickCreateBtn(){
+    public void clickCreateBtn(){
         createBtn.click();
     }
+
     public MyAppPage editApp() {
         Utils.waitForElementPresent(editBtn);
         editBtn.click();
@@ -104,13 +119,16 @@ public class MyAppPage extends BasicPage {
         return initPage(MyAppPage.class);
     }
 
-    public MyAppPage openFiveTimesAppPopular(){
-        int i;
-        for (i=0; i<5; i++) {
-            AppPage.clickDownload();
-            driver.navigate().back();
-        }
+    public MyAppPage downloadToAppPopularState() {
+        Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(10, SECONDS)
+                .pollingEvery(10, MILLISECONDS)
+                .ignoring(NoSuchElementException.class);
+        AppPage.clickDownload();
+        driver.navigate().back();
         driver.navigate().refresh();
+        System.out.println(message1);
+        wait.until(driver -> driver.findElement(By.cssSelector(HomePage.popularAppSelector)));
         return initPage(MyAppPage.class);
     }
 

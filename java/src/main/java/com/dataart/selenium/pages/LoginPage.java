@@ -4,6 +4,8 @@ import com.dataart.selenium.framework.BasePage;
 import com.dataart.selenium.models.User;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
@@ -16,7 +18,9 @@ public class LoginPage extends BasePage {
     @FindBy(css = "div > a")
     WebElement registerNewUser;
 
-    public HomePage loginAs(User user) {
+    WebDriverWait wait = new WebDriverWait(driver, 10);
+    public HomePage loginAs(User user){
+        wait.until(ExpectedConditions.elementToBeClickable(userNameTextField));
         userNameTextField.clear();
         passwordTextField.clear();
         userNameTextField.sendKeys(user.getUsername());

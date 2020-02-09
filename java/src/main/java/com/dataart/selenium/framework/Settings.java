@@ -27,7 +27,7 @@ public class Settings {
         properties = loadPropertiesFile();
         baseUrl = getPropertyOrThrowException(SELENIUM_BASEURL);
         authUrl = getPropertyOrThrowException(SELENIUM_AUTH);
-        browser = BrowserType.Browser(getPropertyOrThrowException(SELENIUM_BROWSER));
+        browser = BrowserType.convertToBrowserType(getPropertyOrThrowException(SELENIUM_BROWSER));
     }
 
     private Properties loadPropertiesFile() {
@@ -60,8 +60,10 @@ public class Settings {
         return getProperty(name, true);
     }
 
-    public String getUrl(boolean url){
-        if (url){
+    public String getUrl(){
+        String baseAuthUrl = System.getProperty("selenium.baseAuthUrl");
+        boolean isAuth = Boolean.parseBoolean(baseAuthUrl);
+        if (isAuth){
             return getAuthUrl();
         }
         return getBaseUrl();

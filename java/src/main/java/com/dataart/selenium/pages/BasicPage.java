@@ -1,7 +1,6 @@
 package com.dataart.selenium.pages;
 
 import com.dataart.selenium.framework.BasePage;
-import com.dataart.selenium.framework.BaseTest;
 import org.openqa.selenium.By;
 import static com.dataart.selenium.framework.Utils.isElementPresent;
 
@@ -26,6 +25,6 @@ public class BasicPage extends BasePage {
     }
 
     public String getUrlStart(){
-        return settings.getUrl(BaseTest.selectUrl);
+        return settings.getUrl();
     }
 }
