@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Command line test"
-           tests="5"
+           tests="8"
            failures="2"
            errors="0"
-           skipped="3"
-           time="0.000">
+           skipped="6"
+           time="0.001">
   <properties />
-            <testcase name="afterClass" time="0.000" classname="com.dataart.selenium.tests.JsTest">
+            <testcase name="afterClass" time="0.000" classname="com.dataart.selenium.tests.AjaxTest">
                 <failure type="java.lang.NullPointerException"
                   message="(null)"
               >
@@ -40,7 +40,7 @@
       </failure>
 
           </testcase>
-            <testcase name="beforeSuite" time="0.000" classname="com.dataart.selenium.tests.JsTest">
+            <testcase name="beforeSuite" time="0.000" classname="com.dataart.selenium.tests.AjaxTest">
                 <failure type="java.lang.IllegalStateException"
                   message="The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe"
               >
@@ -84,13 +84,22 @@
 
           </testcase>
   
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.JsTest">
+            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
           <skipped />
     </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.JsTest">
+            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
           <skipped />
     </testcase>
-            <testcase name="handleAlert" time="0.0" classname="com.dataart.selenium.tests.JsTest">
+            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
+          <skipped />
+    </testcase>
+            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
+          <skipped />
+    </testcase>
+            <testcase name="calcSumCorrect" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
+          <skipped />
+    </testcase>
+            <testcase name="calcSumIncorrect" time="0.0" classname="com.dataart.selenium.tests.AjaxTest">
           <skipped />
     </testcase>
   
