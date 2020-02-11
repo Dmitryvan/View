@@ -29,10 +29,12 @@ public class JsTest extends BaseTest {
     // Get the coordinates of the jumping div (with a red border and the text ‘Find me !’ inside).
     // Enter the coordinates into the input fields and press ‘Process’.
     // Handle the alert and verify that the message ‘Whoo Hoooo! Correct!’ is displayed.
-    public void handleAlert() throws InterruptedException {
+    public void handleAlert() {
+        System.out.println("handleAlert STARTED");
         loginPage.loginAs(user);
         homePage.clickJsTestBtn();
         jsPage.handleCoordinates();
         jsPage.assertPopupMessage();
+        System.out.println("handleAlert is DONE");
     }
 }

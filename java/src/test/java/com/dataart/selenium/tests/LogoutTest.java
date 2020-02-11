@@ -30,6 +30,7 @@ public class LogoutTest extends BaseTest {
     //Login as a valid user. Open a new browser tab and logout. Switch to the first tab and click on any link.
     // User should be logged out automatically.
     public void logoutTest() {
+        System.out.println("logoutTest STARTED");
         loginPage.loginAs(user);
         homePage.openNewTabBrowser();
         homePage.openLoginPageLink();
@@ -37,5 +38,6 @@ public class LogoutTest extends BaseTest {
         homePage.switchToOldTabBrowser();
         homePage.clickHomeBtn();
         assertThat(isElementPresent(loginPage.LOGIN_BUTTON_XPATH)).isTrue();
+        System.out.println("logoutTest is DONE");
     }
 }

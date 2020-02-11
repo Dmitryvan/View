@@ -40,15 +40,19 @@ public class AppTest extends BaseTest {
     // parameter must display 4 (please note that after clicking the download button the value will be +1).
     // You don’t have to verify stuff that is not shown on the application page, e.g. “id” or "imageData".
     public void compareParam() {
+        System.out.println("compareParam STARTED");
         loginPage.loginAs(user);
         homePage.clickAppIcon();
         ArrayList myAttribute = appPage.getAppInfo();
         AppPage.clickDownload();
         assertThat(appPage.GetInfoFromJsonResponse()).isEqualTo(myAttribute);
+        System.out.println("compareParam is DONE");
     }
+
     @Test (priority = 2)
     // Create a new application without images. Verify that it is displayed correctly and can be downloaded.
     public void newAppWithoutImages() {
+        System.out.println("newAppWithoutImages STARTED");
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
@@ -59,10 +63,13 @@ public class AppTest extends BaseTest {
         AppPage.clickDownload();
         assertThat(appPage.GetInfoFromJsonResponse()).isEqualTo(myAttribute);
         basicPage.forceLogout();
+        System.out.println("newAppWithoutImages is DONE");
     }
+
     @Test (priority = 3)
     // Edit an application without images, and verify that the changes were applied.
     public void changeApp() {
+        System.out.println("changeApp STARTED");
         loginPage.loginAs(user);
         homePage.openNewApp();
         myAppPage.editApp();
@@ -70,10 +77,13 @@ public class AppTest extends BaseTest {
         homePage.openNewApp();
         assertThat(appPage.description.getText()).isEqualTo("Description: " + myAppPage.message3);
         basicPage.forceLogout();
+        System.out.println("changeApp is DONE");
     }
+
     @Test (priority = 4)
 //    Create a new application with an image and icon.
     public void newAppImage() {
+        System.out.println("newAppImage STARTED");
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
@@ -82,12 +92,15 @@ public class AppTest extends BaseTest {
         homePage.clickHomeBtn();
         homePage.openNewAppImage(); // Verify app creation
         basicPage.forceLogout();
+        System.out.println("newAppImage is DONE");
     }
+
     @Test (priority = 5)
 //    Create an application, and download it many times (5 or 10, for example).
 //    Verify that it has appeared in the most popular apps section, and if you click it, you will be taken
 //    to the details page of this application.
     public void downloadApp() {
+        System.out.println("downloadApp STARTED");
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
@@ -99,10 +112,13 @@ public class AppTest extends BaseTest {
         homePage.clickPopApp();
         appPage.assertDownloadApp(); // Verify that it has appeared in the most popular apps section...
         basicPage.forceLogout();
+        System.out.println("downloadApp is DONE");
     }
+
     @Test (priority = 6)
 //    Delete an application and verify that it has been removed.
     public void deleteApp() {
+        System.out.println("deleteApp STARTED");
         loginPage.loginAs(user);
         homePage.clickMyAppsBtn();
         myAppPage.clickAddNewAppBtn();
@@ -111,5 +127,6 @@ public class AppTest extends BaseTest {
         homePage.openNewApp();
         myAppPage.deleteNewAppWithoutImages();
         assertThat(basicPage.getFlashMessage()).isEqualTo("Deleted");
+        System.out.println("deleteApp is DONE");
     }
 }

@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.dataart.selenium.tests.JsTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 3, Time elapsed: 0.509 s <<< FAILURE! - in com.dataart.selenium.tests.JsTest
+com.dataart.selenium.tests.JsTest.beforeSuite  Time elapsed: 0.356 s  <<< FAILURE!
+java.lang.IllegalStateException: The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe
+
+com.dataart.selenium.tests.JsTest.afterClass  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.NullPointerException
+

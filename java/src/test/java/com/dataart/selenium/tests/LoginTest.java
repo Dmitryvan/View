@@ -29,24 +29,30 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void correctLoginTest(){
+        System.out.println("correctLoginTest STARTED");
         loginPage.loginAs(user);
         headerPage.assertHeader(user);
+        System.out.println("correctLoginTest is DONE");
     }
 
     @Test
     public void incorrectLoginTest() {
+        System.out.println("incorrectLoginTest STARTED");
         user.setPassword(user.getPassword() + user.getPassword());
         loginPage.loginAs(user);
         assertThat(isElementPresent(basicPage.flash)).isTrue();
         assertThat(basicPage.getFlashMessage()).isEqualTo("You have entered an invalid username or password!");
+        System.out.println("incorrectLoginTest is DONE");
     }
 
     @Test
     public void incorrectThenCorrectTest() {
+        System.out.println("incorrectThenCorrectTest STARTED");
         user.setPassword(user.getPassword() + user.getPassword());
         loginPage.loginAs(user);
         user.setPassword(admin().getPassword());
         loginPage.loginAs(user);
         headerPage.assertHeader(user);
+        System.out.println("incorrectThenCorrectTest is DONE");
     }
 }

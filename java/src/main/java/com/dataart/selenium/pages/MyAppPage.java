@@ -127,7 +127,7 @@ public class MyAppPage extends BasicPage {
         AppPage.clickDownload();
         driver.navigate().back();
         driver.navigate().refresh();
-        System.out.println(message1);
+//        System.out.println(message1);
         wait.until(driver -> driver.findElement(By.cssSelector(HomePage.popularAppSelector)));
         return initPage(MyAppPage.class);
     }

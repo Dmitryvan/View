@@ -1,0 +1,6 @@
+com\dataart\selenium\tests\AppTest.class
+com\dataart\selenium\tests\LoginTest.class
+com\dataart\selenium\tests\JsTest.class
+com\dataart\selenium\tests\RegisterTest.class
+com\dataart\selenium\tests\AjaxTest.class
+com\dataart\selenium\tests\LogoutTest.class
