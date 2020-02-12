@@ -14,8 +14,6 @@ public class AjaxPage extends BasicPage{
     WebElement summBtn;
     @FindBy (id = "result")
     public WebElement result;
-    @FindBy (xpath = "//a[.='go back']")
-    WebElement goBackBtn;
 
     public AjaxPage calcSum(String x, String y){
         Utils.waitForElementPresent(xField);

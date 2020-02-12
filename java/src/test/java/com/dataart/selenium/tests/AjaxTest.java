@@ -5,7 +5,6 @@ import com.dataart.selenium.models.User;
 import com.dataart.selenium.pages.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static com.dataart.selenium.framework.BasePage.driver;
 import static com.dataart.selenium.framework.BasePage.initPage;
 import static com.dataart.selenium.models.UserBuilder.admin;

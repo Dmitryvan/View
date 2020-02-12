@@ -1,116 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Command line test"
-           tests="11"
-           failures="2"
+           tests="3"
+           failures="0"
            errors="0"
-           skipped="9"
-           time="0.001">
+           skipped="0"
+           time="99.216">
   <properties />
-            <testcase name="beforeSuite" time="0.000" classname="com.dataart.selenium.tests.LoginTest">
-                <failure type="java.lang.IllegalStateException"
-                  message="The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe"
-              >
-<![CDATA[java.lang.IllegalStateException: The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe
-  com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-  org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-  org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-  org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)
-  org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)
-  org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:329)
-  org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)
-  org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:124)
-  com.dataart.selenium.framework.Settings.getDriver(Settings.java:101)
-  com.dataart.selenium.framework.BaseTest.beforeSuite(BaseTest.java:15)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-  org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:277)
-  org.testng.SuiteRunner.run(SuiteRunner.java:240)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-  org.testng.TestNG.run(TestNG.java:1031)
-  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
-  org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:102)
-  org.apache.maven.surefire.Surefire.run(Surefire.java:109)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
-  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="afterClass" time="0.000" classname="com.dataart.selenium.tests.LoginTest">
-                <failure type="java.lang.NullPointerException"
-                  message="(null)"
-              >
-<![CDATA[java.lang.NullPointerException
-  com.dataart.selenium.framework.BaseTest.afterClass(BaseTest.java:31)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-  org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
-  org.testng.SuiteRunner.run(SuiteRunner.java:240)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-  org.testng.TestNG.run(TestNG.java:1031)
-  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
-  org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:102)
-  org.apache.maven.surefire.Surefire.run(Surefire.java:109)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
-  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
-]]>
-      </failure>
-
-          </testcase>
-  
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="correctLoginTest" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="incorrectThenCorrectTest" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
-            <testcase name="incorrectLoginTest" time="0.0" classname="com.dataart.selenium.tests.LoginTest">
-          <skipped />
-    </testcase>
   
   
+            <testcase name="correctLoginTest" time="28.971" classname="com.dataart.selenium.tests.LoginTest" />
+                <testcase name="incorrectLoginTest" time="35.276" classname="com.dataart.selenium.tests.LoginTest" />
+                <testcase name="incorrectThenCorrectTest" time="34.969" classname="com.dataart.selenium.tests.LoginTest" />
+      
 </testsuite>

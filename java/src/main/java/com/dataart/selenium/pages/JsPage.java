@@ -13,10 +13,6 @@ public class JsPage extends BasicPage {
     WebElement leftField;
     @FindBy (id = "process")
     WebElement processBtn;
-    @FindBy (xpath = "//div[@class='flash']")
-    WebElement box;
-    @FindBy (xpath = "//script[2]")
-    WebElement scriptFind;
 
     public void handleCoordinates() {
         ((JavascriptExecutor)driver).executeScript("return $(\"#top\").val(Math.round($(\".flash\").offset().top))");

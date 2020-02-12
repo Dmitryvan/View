@@ -1,88 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Command line test"
-           tests="15"
-           failures="3"
+           tests="5"
+           failures="2"
            errors="0"
-           skipped="12"
-           time="0.001">
+           skipped="0"
+           time="14.977">
   <properties />
-            <testcase name="beforeSuite" time="0.000" classname="com.dataart.selenium.tests.RegisterTest">
-                <failure type="java.lang.IllegalStateException"
-                  message="The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe"
-              >
-<![CDATA[java.lang.IllegalStateException: The driver executable does not exist: C:\Users\dvanin\Downloads\Git\dvanin-aut06\java\target\.\target\test-classes\chromedriver.exe
-  com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-  org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-  org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-  org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)
-  org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)
-  org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:329)
-  org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)
-  org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:124)
-  com.dataart.selenium.framework.Settings.getDriver(Settings.java:101)
-  com.dataart.selenium.framework.BaseTest.beforeSuite(BaseTest.java:15)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-  org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:277)
-  org.testng.SuiteRunner.run(SuiteRunner.java:240)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-  org.testng.TestNG.run(TestNG.java:1031)
-  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
-  org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:102)
-  org.apache.maven.surefire.Surefire.run(Surefire.java:109)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
-  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
-]]>
-      </failure>
-
-          </testcase>
-            <testcase name="afterClass" time="0.000" classname="com.dataart.selenium.tests.RegisterTest">
-                <failure type="java.lang.NullPointerException"
-                  message="(null)"
-              >
-<![CDATA[java.lang.NullPointerException
-  com.dataart.selenium.framework.BaseTest.afterClass(BaseTest.java:31)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-  org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
-  org.testng.SuiteRunner.run(SuiteRunner.java:240)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-  org.testng.TestNG.run(TestNG.java:1031)
-  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
-  org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:102)
-  org.apache.maven.surefire.Surefire.run(Surefire.java:109)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
-  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
-]]>
-      </failure>
-
-          </testcase>
             <testcase name="registrationFiveTimesTest" time="0.000" classname="com.dataart.selenium.tests.RegisterTest">
                 <failure type="java.lang.RuntimeException"
                   message="java.io.FileNotFoundException: src\test\resources\Data.csv (The system cannot find the path specified)"
@@ -157,43 +80,90 @@ Caused by: java.io.FileNotFoundException: src\test\resources\Data.csv (The syste
       </failure>
 
           </testcase>
+            <testcase name="registrationUserTest" time="1.116" classname="com.dataart.selenium.tests.RegisterTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[name=&apos;role&apos;]&quot;}
+  (Session info: chrome=80.0.3987.100)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.1&apos;, revision: &apos;9c21bb67ef&apos;, time: &apos;2017-08-17T15:26:08.955Z&apos;
+System info: host: &apos;DVANIN&apos;, ip: &apos;192.168.185.135&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\WINDOWS\TEMP\scoped_dir13440_9207}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=80.0.3987.100, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 6c35762716d3bebc5fa31306b528e2d8
+*** Element info: {Using=css selector, value=[name=&apos;role&apos;]}"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[name='role']"}
+  (Session info: chrome=80.0.3987.100)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.1', revision: '9c21bb67ef', time: '2017-08-17T15:26:08.955Z'
+System info: host: 'DVANIN', ip: '192.168.185.135', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\WINDOWS\TEMP\scoped_dir13440_9207}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=80.0.3987.100, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 6c35762716d3bebc5fa31306b528e2d8
+*** Element info: {Using=css selector, value=[name='role']}
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
+  org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+  org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+  org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:414)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:505)
+  org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:406)
+  org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+  org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+  com.sun.proxy.$Proxy7.click(Unknown Source)
+  com.dataart.selenium.pages.RegisterPage.clickUserRole(RegisterPage.java:55)
+  com.dataart.selenium.tests.RegisterTest.registrationUserTest(RegisterTest.java:41)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+  org.testng.TestRunner.privateRun(TestRunner.java:767)
+  org.testng.TestRunner.run(TestRunner.java:617)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+  org.testng.SuiteRunner.run(SuiteRunner.java:240)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+  org.testng.TestNG.run(TestNG.java:1031)
+  org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
+  org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:102)
+  org.apache.maven.surefire.Surefire.run(Surefire.java:109)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+  org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
+]]>
+      </failure>
+
+          </testcase>
   
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="openLoginPage" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="tearDown" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="devUploadApp" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="registrationUserTest" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="loginAfterRegistrationTest" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
-            <testcase name="userCantUploadApp" time="0.0" classname="com.dataart.selenium.tests.RegisterTest">
-          <skipped />
-    </testcase>
   
-  
+            <testcase name="devUploadApp" time="7.711" classname="com.dataart.selenium.tests.RegisterTest" />
+                <testcase name="userCantUploadApp" time="2.290" classname="com.dataart.selenium.tests.RegisterTest" />
+                <testcase name="loginAfterRegistrationTest" time="3.860" classname="com.dataart.selenium.tests.RegisterTest" />
+      
 </testsuite>

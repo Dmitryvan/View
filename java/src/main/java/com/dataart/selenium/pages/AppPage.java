@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class AppPage extends BasicPage{
 
-    public AppPage getApp() {
-        return initPage(AppPage.class);
-    }
-
     @FindBy(css = ".download-button > a")
     public static WebElement downloadBtn;
     @FindBy(css = ".name")

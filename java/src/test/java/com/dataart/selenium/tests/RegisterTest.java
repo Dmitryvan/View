@@ -7,6 +7,7 @@ import com.dataart.selenium.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import static com.dataart.selenium.framework.BasePage.driver;
 import static com.dataart.selenium.framework.BasePage.initPage;
 import static com.dataart.selenium.models.UserBuilder.admin;
 
@@ -60,6 +61,7 @@ public class RegisterTest extends BaseTest {
     public void devUploadApp() {
         System.out.println("devUploadApp STARTED");
         loginPage.clickRegNewUserBtn();
+        driver.navigate().refresh();
         registerPage.registrationNewUser(user);
         homePage.clickAppIcon();
         Assert.assertTrue(AppPage.downloadBtn.isDisplayed());
