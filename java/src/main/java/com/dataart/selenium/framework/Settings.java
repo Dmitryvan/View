@@ -61,7 +61,7 @@ public class Settings {
     }
 
     public String getUrl(){
-        String baseAuthUrl = System.getProperty("selenium.baseAuthUrl");
+        String baseAuthUrl = getPropertyOrNull("selenium.baseAuthUrl");
         boolean isAuth = Boolean.parseBoolean(baseAuthUrl);
         if (isAuth){
             return getAuthUrl();
@@ -97,7 +97,7 @@ public class Settings {
     WebDriver getDriver(BrowserType browserType) {
         switch (browserType) {
             case GC:
-                System.setProperty("webdriver.chrome.driver", ".//test-classes//chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", ".//target//test-classes//chromedriver.exe");
                 return new ChromeDriver();
             case FIREFOX:
                 System.setProperty("webdriver.gecko.driver", ".//target//test-classes//geckodriver.exe");

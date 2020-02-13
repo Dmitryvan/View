@@ -11,8 +11,6 @@
     <properties>
         <driver.version>3.1.0</driver.version>
         <selenium.properties>selenium.properties</selenium.properties>
-        <selenium.baseAuthUrl>false</selenium.baseAuthUrl>
-        <selenium.browser>gc</selenium.browser>
     </properties>
 
     <build>
@@ -35,11 +33,6 @@
                     <workingDirectory>target/</workingDirectory>
                     <forkMode>always</forkMode>
                     <skip>false</skip>
-                    <systemPropertyVariables>
-                        <selenium.baseAuthUrl>${selenium.baseAuthUrl}</selenium.baseAuthUrl>
-                        <selenium.browser>${selenium.browser}</selenium.browser>
-                        <selenium.properties>${selenium.properties}</selenium.properties>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>

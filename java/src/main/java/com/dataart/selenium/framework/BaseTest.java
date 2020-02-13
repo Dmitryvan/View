@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 import static com.dataart.selenium.framework.BasePage.driver;
 
 public class BaseTest {
-    private static Settings settings = new Settings();
+    private Settings settings = new Settings();
 
     @BeforeSuite(alwaysRun = true)
-    public static void beforeSuite() {
-        String browser = System.getProperty("selenium.browser");
+    public void beforeSuite() {
+        String browser = settings.getPropertyOrNull("selenium.browser");
         BrowserType browserType = BrowserType.convertToBrowserType(browser);
         BasePage.driver = settings.getDriver(browserType);
         BasePage.settings = settings;
@@ -27,7 +27,7 @@ public class BaseTest {
     }
 
     @AfterSuite(alwaysRun = true)
-    public static void afterClass() {
+    public void afterClass() {
         BasePage.driver.quit();
     }
 }
