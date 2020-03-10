@@ -76,13 +76,13 @@ public class RegisterTest extends BaseTest {
         registerPage.clickUserRole();
         registerPage.registrationNewUser(user);
         homePage.clickAppIcon();
-        Assert.assertTrue(AppPage.downloadBtn.isDisplayed()); //сервис показывает кнопку Download для USER, respond для DEVELOPER и USER идентичны
+        Assert.assertTrue(AppPage.downloadBtn.isDisplayed());
         System.out.println("userCantUploadApp is DONE");
     }
 
     @Test(dataProvider = "usersregister", dataProviderClass = MyDataProvider.class)
-    // Register at least 5 users with different roles using data-driven testing (DDT).
-    // In other words, run one test as many times with as many users you put in the .CSV file.
+    // Register at least 5 users with different roles.
+    // run one test as many times with as many users you put in the .CSV file.
     public void registrationFiveTimesTest(String username, String fname, String lname, String password, String userRole) {
         System.out.println("registrationFiveTimesTest STARTED");
         loginPage.clickRegNewUserBtn();

@@ -26,6 +26,12 @@ public class RegisterPage extends BasePage {
     @FindBy(css = "option[value='USER']")
     WebElement userCheck;
 
+    public static final String NAME_FIELD = "//input[@name='name']";
+    public static final String FIRST_NAME_FIELD = "[name='fname']";
+    public static final String LAST_NAME_FIELD = "[name='lname']";
+    public static final String PASSWORD_FIELD = "[name='password']";
+    public static final String CONFIRM_PASSWORD_FIELD = "[name='passwordConfirm']";
+
     public HomePage registrationNewUser(User user) {
         userNameTextField.clear();
         userFNameTextField.clear();
@@ -64,10 +70,4 @@ public class RegisterPage extends BasePage {
         }
         return initPage(RegisterPage.class);
     }
-
-    public static final String NAME_FIELD = "//input[@name='name']";
-    public static final String FIRST_NAME_FIELD = "[name='fname']";
-    public static final String LAST_NAME_FIELD = "[name='lname']";
-    public static final String PASSWORD_FIELD = "[name='password']";
-    public static final String CONFIRM_PASSWORD_FIELD = "[name='passwordConfirm']";
 }
